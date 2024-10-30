@@ -1,6 +1,6 @@
 {
   "name": "@alexssmusica/emissao-nota-fiscal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Modulo que auxilia na geração de NFe e NFCe",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -15,7 +15,9 @@
   ],
   "keywords": [
     "NFe",
-    "NFCe"
+    "NFCe",
+    "Emissao",
+    "Nota Fiscal"
   ],
   "repository": {
     "type": "git",
@@ -23,17 +25,18 @@
   },
   "homepage": "https://github.com/Alexssmusica/emissao-nota-fiscal/#readme",
   "scripts": {
-    "version": "npm run prettier && git add -A src",
+    "version": "npm run prettier && npm run build && git add -A src",
+    "postversion": "git push && git push --tags && npm run publish",
     "prettier": "prettier src/**/*.{js,ts} --write",
-    "postversion": "git push && git push --tags",
     "clean-lib": "npx rimraf lib",
     "build": "npm run clean-lib && tsc -p tsconfig.json && npm run copy-xsd",
+    "publish": "npm adduser && npm publish --access public",
     "copy-xsd": "copyfiles -u 1 src/**/*.xsd lib/",
     "type": "tsc --project tsconfig.json",
     "test": "ts-node ./test/status-servico.test.ts"
   },
   "dependencies": {
-    "@alexssmusica/node-pdf-nfe": "1.1.1",
+    "@alexssmusica/node-pdf-nfe": "1.1.4",
     "bwip-js": "4.5.1",
     "date-fns": "2.29.3",
     "dotenv": "16.0.3",
