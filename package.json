@@ -33,7 +33,7 @@
     "publish": "npm adduser && npm publish --access public",
     "copy-xsd": "copyfiles -u 1 src/**/*.xsd lib/",
     "type": "tsc --project tsconfig.json",
-    "test": "ts-node ./test/status-servico.test.ts"
+    "test": "ts-node ./tests/status-servico.test.ts"
   },
   "dependencies": {
     "@alexssmusica/node-pdf-nfe": "1.1.4",
