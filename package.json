@@ -36,7 +36,7 @@
     "test": "ts-node ./tests/status-servico.test.ts"
   },
   "dependencies": {
-    "@alexssmusica/node-pdf-nfe": "1.1.4",
+    "@alexssmusica/node-pdf-nfe": "1.1.8",
     "bwip-js": "4.5.1",
     "date-fns": "2.29.3",
     "dotenv": "16.0.3",
