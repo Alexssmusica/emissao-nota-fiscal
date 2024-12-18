@@ -4,15 +4,15 @@ import { carregaCertificadoPath, statusServico } from '../src';
 import { Configuracoes } from '../src/domain/contracts/repos';
 import { env } from '../src/main/config/env';
 
-const keypem = carregaCertificadoPath({
+const keyPem = carregaCertificadoPath({
   path: env.CERTIFICATE_PATH,
   password: env.CERTIFICATE_PASSWORD
 });
 
 const cert = {
   pfx: fs.readFileSync(env.CERTIFICATE_PATH),
-  pem: keypem.pem,
-  key: keypem.key,
+  pem: keyPem.pem,
+  key: keyPem.key,
   password: env.CERTIFICATE_PASSWORD
 };
 
